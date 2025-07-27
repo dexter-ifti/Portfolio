@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#111010] text-white;
+}
+
+.image__container img {
+  position: unset !important;
+}
