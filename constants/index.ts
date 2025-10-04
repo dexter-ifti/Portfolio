@@ -44,10 +44,34 @@ export const Projects: Project[] = [
     ]
   },
   {
+    name: "mini-cursor",
+    slug: "mini-cursor",
+    image: {
+      url: "/mini-cursor.png",
+      width: 400,
+      height: 200,
+      alt: "Mini-Cursor - AI Coding Assistant"
+    },
+    urls: {
+      githubUrl: "https://github.com/dexter-ifti/mini-cursor"
+    },
+    description: "A terminal-based AI coding assistant for streamlining full-stack project development with AI capabilities to generate boilerplate code. Integrated LangGraph and LangChain frameworks for advanced AI workflow orchestration and enabled direct command execution from terminal.",
+    tags: [
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "AI",
+      "Terminal",
+      "Workflow Orchestration",
+      "Code Generation",
+      "CLI"
+    ]
+  },
+  {
     name: "customizable caching api",
     slug: "customizable-caching-api",
     image: {
-      url: "/caching-api.png",
+      url: "/cache-api.png",
       width: 400,
       height: 200,
       alt: "Customizable Caching API"
@@ -188,7 +212,7 @@ export const Projects: Project[] = [
     name: "currency converter",
     slug: "currency-converter",
     image: {
-      url: "/currency-converter.png",
+      url: "/currency-convertor.png",
       width: 400,
       height: 200,
       alt: "Currency Converter"
@@ -206,5 +230,5 @@ export const Projects: Project[] = [
       "Responsive Design",
       "Real-time Data"
     ]
-  }
+  },
 ];

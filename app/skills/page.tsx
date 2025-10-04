@@ -30,7 +30,26 @@ export default function SkillsPage() {
         </div>
 
         {/* Technical Skills Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-4 gap-8 mb-16">
+          {/* Programming Languages */}
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Programming Languages
+            </h2>
+            <div className="space-y-2">
+              <div className="flex flex-wrap gap-2">
+                {["JavaScript", "TypeScript", "Python", "Java", "C Language"].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Frontend Skills */}
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -38,20 +57,10 @@ export default function SkillsPage() {
             </h2>
             <div className="space-y-2">
               <div className="flex flex-wrap gap-2">
-                {["HTML5", "CSS3", "JavaScript", "TypeScript"].map((skill) => (
+                {["HTML5", "CSS3", "React JS", "Tailwind CSS"].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {["React JS", "Tailwind CSS"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium"
                   >
                     {skill}
                   </span>
@@ -77,7 +86,7 @@ export default function SkillsPage() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
-                {["MongoDB", "PostgreSQL", "Prisma ORM", "Mongoose"].map((skill) => (
+                {["MongoDB", "PostgreSQL", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium"
