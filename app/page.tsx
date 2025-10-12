@@ -22,18 +22,28 @@ export default function Home() {
   return (
     <main className="min-h-screen pt-10 container items-center justify-center flex-col">
       <div className="content-center items-center flex flex-none flex-col flex-nowrap gap-2.5 h-min justify-center overflow-visible relative w-full px-4 py-0">
-        <div className="container max-w-[512px] flex flex-row">
-          <Image
-            src="/pfp.png"
-            alt="Taha"
-            width={44}
-            height={44}
-            className="rounded-full"
-          />
-          <div className="flex flex-col ml-2">
-            <h1 className="text-base font-bold text-white">Taha </h1>
-            <span className="text-sm text-gray-400">@DexterIfti</span>
+        <div className="container max-w-[512px] flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center">
+            <Image
+              src="/pfp.png"
+              alt="Taha"
+              width={44}
+              height={44}
+              className="rounded-full"
+            />
+            <div className="flex flex-col ml-2">
+              <h1 className="text-base font-bold text-white">Taha </h1>
+              <span className="text-sm text-gray-400">@DexterIfti</span>
+            </div>
           </div>
+          
+          {/* Resume Button */}
+          <Link
+            href="/resume"
+            className="text-sm text-gray-400 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-gray-400 rounded-md px-3 py-1.5"
+          >
+            Resume
+          </Link>
         </div>
       </div>
       <div className="flex mt-8 flex-col max-w-[512px] mx-auto p-5 lg:p-0">
@@ -285,15 +295,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="text-center py-4">
-          <Link
-            href={"/resume"}
-            className="text-neutral-600 text-sm hover:underline"
-          >
-            Resume
-          </Link>
         </div>
       </div>
     </main>
