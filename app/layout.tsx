@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: "Taha",
     template: "%s | Taha",
   },
-  description: "Full Stack Web Developer and Designer from India, specializing in Next.js, React, and TypeScript.",
-  keywords: ["Full Stack Developer", "Web Designer", "Next.js", "React", "TypeScript", "India"],
+  description: "Full Stack Web Developer and Designer from India, specializing in Node.js, React, and TypeScript.",
+  keywords: ["Full Stack Developer", "Web Designer", "Backend Developer", "React", "TypeScript", "India"],
   authors: [{ name: "Taha", url: "https://ifti.tech/" }],
   creator: "Taha",
   icons: {
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     url: "https://ifti.tech",
     siteName: "Taha's Portfolio",
     title: "Taha - Backend Developer",
-    description: "Full Stack Web Developer and Designer from India, specializing in Next.js, React, and TypeScript.",
+    description: "Full Stack Web Developer and Designer from India, specializing in Backend, React, and TypeScript.",
     images: [
       {
-        url: "/pfp.png",
+        url: "/X_PFP.jpg",
         width: 1200,
         height: 675,
         alt: "Taha's Profile Picture",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     creator: "@DexterIfti",
     images: [
       {
-        url: "/pfp.png",
+        url: "/X_PFP.jpg",
         width: 1200,
         height: 675,
         alt: "Taha's Profile Picture",
