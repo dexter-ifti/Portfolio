@@ -255,7 +255,7 @@ export default function Home() {
           <div className="mb-4">
             <h2 className="text-lg text-gray-300 mb-2">Backend</h2>
             <div className="flex flex-wrap gap-2">
-              {["Node.js", "Express.js", "HonoJS", "MongoDB", "PostgreSQL", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
+              {["Node.js", "Express.js", "HonoJS", "MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1 bg-green-100/10 text-green-300 rounded-full text-sm font-medium border border-green-300/20"
