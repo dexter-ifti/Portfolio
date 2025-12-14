@@ -86,7 +86,7 @@ export default function SkillsPage() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
-                {["MongoDB", "PostgreSQL", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
+                {["MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium"
