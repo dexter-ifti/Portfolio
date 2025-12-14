@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Full Stack Web Developer and Designer from India, specializing in Backend, React, and TypeScript.",
     images: [
       {
-        url: "/X_PFP.jpg",
+        url: "/Website_overview",
         width: 1200,
         height: 675,
         alt: "Taha's Profile Picture",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     creator: "@DexterIfti",
     images: [
       {
-        url: "/X_PFP.jpg",
+        url: "/Website_overview",
         width: 1200,
         height: 675,
         alt: "Taha's Profile Picture",
