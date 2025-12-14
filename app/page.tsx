@@ -232,9 +232,9 @@ export default function Home() {
         <div className="mt-5">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl text-white mt-5 mb-5">Skills</h1>
-            <Link href="/skills" className="text-neutral-500 hover:underline">
+            {/* <Link href="/skills" className="text-neutral-500 hover:underline">
               more
-            </Link>
+            </Link> */}
           </div>
 
           {/* Programming Languages */}
