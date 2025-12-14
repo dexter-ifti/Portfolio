@@ -19,6 +19,31 @@ interface Project {
 
 export const Projects: Project[] = [
   {
+    name: "tinyqueue - redis-backed job queue",
+    slug: "tinyqueue",
+    image: {
+      url: "/tinyqueue.png",
+      width: 400,
+      height: 200,
+      alt: "TinyQueue - Redis-Backed Job Queue"
+    },
+    urls: {
+      githubUrl: "https://github.com/yourusername/tinyqueue"
+    },
+    description: "Redis-backed job queue with FIFO processing, concurrent worker pools, automatic retry with exponential backoff, and real-time job state monitoring.",
+    tags: [
+      "TypeScript",
+      "Express.js",
+      "Redis",
+      "Bun",
+      "Job Queue",
+      "Background Workers",
+      "FIFO",
+      "Exponential Backoff",
+      "Real-time Monitoring"
+    ]
+  },
+  {
     name: "streaker",
     slug: "streaker",
     image: {
