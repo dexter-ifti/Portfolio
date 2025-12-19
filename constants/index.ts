@@ -28,7 +28,7 @@ export const Projects: Project[] = [
       alt: "TinyQueue - Redis-Backed Job Queue"
     },
     urls: {
-      githubUrl: "https://github.com/yourusername/tinyqueue"
+      githubUrl: "https://github.com/dexter-ifti/tinyqueue"
     },
     description: "Redis-backed job queue with FIFO processing, concurrent worker pools, automatic retry with exponential backoff, and real-time job state monitoring.",
     tags: [
