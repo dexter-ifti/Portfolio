@@ -53,7 +53,7 @@ export const Projects: Project[] = [
       alt: "Streaker - Habit Tracking Web App"
     },
     urls: {
-      liveUrl: "https://streaker.ifti.tech",
+      liveUrl: "https://streaker.in",
       githubUrl: "https://github.com/dexter-ifti/streaker"
     },
     description: "A full-stack habit tracking application with user-friendly interface for tracking habits and streaks. Built with modern tech stack and scalable serverless architecture.",
