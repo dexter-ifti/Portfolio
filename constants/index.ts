@@ -126,7 +126,7 @@ export const Projects: Project[] = [
       alt: "PayPulse - Payment App"
     },
     urls: {
-      liveUrl: "https://paypulse.ifti.tech",
+      liveUrl: "https://pay-pulse-roan.vercel.app/",
       githubUrl: "https://github.com/dexter-ifti/PayPulse"
     },
     description: "A Paytm-like payment application enabling secure money transfers and balance checking with robust financial transaction handling and data integrity.",
@@ -150,7 +150,7 @@ export const Projects: Project[] = [
       alt: "Pencraft - Blog Website"
     },
     urls: {
-      liveUrl: "https://pencraft.ifti.tech",
+      liveUrl: "https://pencraft-sage.vercel.app/",
       githubUrl: "https://github.com/dexter-ifti/Pencraft"
     },
     description: "A dynamic blog platform allowing users to create and modify blog posts with efficient backend operations and optimal database management.",
