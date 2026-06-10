@@ -196,7 +196,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full h-[1px] "></div>
-        {/* <WorkExperience /> */}
+         <WorkExperience /> 
         <div className="mt-5">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl text-white mt-5 mb-5">Projects</h1>
