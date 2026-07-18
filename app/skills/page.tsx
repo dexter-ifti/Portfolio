@@ -1,199 +1,273 @@
-import Image from "next/image";
 import { Metadata } from "next";
+import Link from "next/link";
+import {
+  FiArrowUpRight,
+  FiCode,
+  FiCpu,
+  FiDatabase,
+  FiGithub,
+  FiLayers,
+  FiTerminal,
+  FiTool,
+  FiZap,
+} from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
+import BackButton from "@/components/shared/back";
 
 export const metadata: Metadata = {
-  title: "Technical Skills | Ifti Taha",
+  title: "Skills | Ifti Taha",
   description:
-    "Explore my technical skills in frontend, backend development, and tools. View my coding statistics from GitHub and LeetCode.",
+    "A compact view of Taha's backend, frontend, database, tooling, and coding practice skills.",
   keywords: [
     "technical skills",
-    "frontend",
     "backend",
+    "frontend",
     "React",
     "Node.js",
-    "GitHub stats",
-    "LeetCode",
+    "TypeScript",
+    "PostgreSQL",
   ],
 };
 
+const skillGroups = [
+  {
+    title: "Backend",
+    note: "APIs, queues, auth, caching, and service plumbing.",
+    icon: FiCpu,
+    accent: "text-emerald-300",
+    border: "border-emerald-300/20",
+    bg: "bg-emerald-300/10",
+    skills: [
+      "Node.js",
+      "Express.js",
+      "HonoJS",
+      "REST APIs",
+      "JWT",
+      "Zod",
+      "Background Workers",
+    ],
+  },
+  {
+    title: "Data",
+    note: "Relational modeling, caching, and ORM-backed products.",
+    icon: FiDatabase,
+    accent: "text-sky-300",
+    border: "border-sky-300/20",
+    bg: "bg-sky-300/10",
+    skills: [
+      "PostgreSQL",
+      "Redis",
+      "Prisma ORM",
+      "MongoDB",
+      "Mongoose",
+      "MySQL",
+    ],
+  },
+  {
+    title: "Frontend",
+    note: "Clean client interfaces with pragmatic state and styling.",
+    icon: FiLayers,
+    accent: "text-violet-300",
+    border: "border-violet-300/20",
+    bg: "bg-violet-300/10",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+      "TanStack Query",
+    ],
+  },
+  {
+    title: "AI",
+    note: "Agentic workflows, retrieval systems, and model integrations.",
+    icon: FiZap,
+    accent: "text-rose-300",
+    border: "border-rose-300/20",
+    bg: "bg-rose-300/10",
+    skills: [
+      "LangChain",
+      "LangGraph",
+      "OpenAI SDK",
+      "Gemini",
+      "pgvector",
+      "Chroma",
+      "FAISS",
+      "Embeddings",
+      "AI Agents",
+      "AI Automation",
+      "RAG",
+    ],
+  },
+  {
+    title: "Tools",
+    note: "Shipping, debugging, and keeping projects maintainable.",
+    icon: FiTool,
+    accent: "text-amber-300",
+    border: "border-amber-300/20",
+    bg: "bg-amber-300/10",
+    skills: ["Git", "Docker", "Cloudflare", "AWS", "Postman", "Bun"],
+  },
+];
+
+const coreStack = [
+  "TypeScript",
+  "Node.js",
+  "Hono",
+  "Express",
+  "PostgreSQL",
+  "Redis",
+  "Prisma",
+  "React",
+  "Next.js",
+  "LangGraph",
+];
+
+const practiceLinks = [
+  {
+    href: "https://github.com/dexter-ifti",
+    label: "GitHub",
+    detail: "Projects, experiments, and source code",
+    icon: FiGithub,
+  },
+  {
+    href: "https://leetcode.com/ifti_taha/",
+    label: "LeetCode",
+    detail: "Problem-solving practice",
+    icon: SiLeetcode,
+  },
+];
+
 export default function SkillsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Technical Skills
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            My development expertise and coding statistics
-          </p>
+    <main className="container mx-auto min-h-screen px-5 pb-16 pt-6">
+      <div className="mx-auto flex max-w-[640px] flex-col">
+        <div className="w-fit">
+          <BackButton />
         </div>
 
-        {/* Technical Skills Section */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
-          {/* Programming Languages */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Programming Languages
-            </h2>
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-2">
-                {["JavaScript", "TypeScript", "Python", "Java", "C Language"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+        <section className="mt-8 pb-7">
+          <div className="flex items-start gap-3">
+            <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-gray-200">
+              <FiTerminal aria-hidden="true" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold leading-tight tracking-[-0.02em] text-white sm:text-4xl">
+                Skills
+              </h1>
+              <p className="mt-3 max-w-[60ch] text-pretty text-base leading-7 text-gray-300">
+                The stack I reach for when building backend-heavy web products:
+                typed APIs, practical databases, responsive interfaces, and the
+                tooling around them.
+              </p>
             </div>
           </div>
 
-          {/* Frontend Skills */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Frontend
-            </h2>
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-2">
-                {["HTML5", "CSS3", "React JS", "Tailwind CSS"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {coreStack.map((skill) => (
+              <span
+                key={skill}
+                className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm font-medium text-gray-200"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
+        </section>
 
-          {/* Backend Skills */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Backend
-            </h2>
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-2">
-                {["Node.js", "Express.js", "HonoJS"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 mt-3">
-                {["MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Tools & Technologies */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Tools & Technologies
-            </h2>
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-2">
-                {["Git", "Docker", "Cloudflare", "AWS"].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Coding Stats Section */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Coding Statistics
+        <section aria-labelledby="skill-groups" className="mt-8">
+          <h2 id="skill-groups" className="sr-only">
+            Skill groups
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            My development activity and progress
+          <div className="divide-y divide-white/10 border-y border-white/10">
+            {skillGroups.map((group) => {
+              const Icon = group.icon;
+
+              return (
+                <article
+                  key={group.title}
+                  className="grid gap-4 py-6 sm:grid-cols-[11.5rem_1fr] sm:gap-6"
+                >
+                  <div>
+                    <div
+                      className={`mb-3 flex h-9 w-9 items-center justify-center rounded-md border ${group.border} ${group.bg} ${group.accent}`}
+                    >
+                      <Icon aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl font-semibold leading-tight text-white">
+                      {group.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-400">
+                      {group.note}
+                    </p>
+                  </div>
+
+                  <ul className="flex flex-wrap content-start gap-2">
+                    {group.skills.map((skill) => (
+                      <li key={skill}>
+                        <span
+                          className={`inline-flex rounded-full border ${group.border} ${group.bg} px-3 py-1 text-sm font-medium ${group.accent}`}
+                        >
+                          {skill}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section aria-labelledby="practice" className="mt-10">
+          <div className="flex items-center gap-3">
+            <FiCode className="text-gray-300" aria-hidden="true" />
+            <h2 id="practice" className="text-2xl font-semibold text-white">
+              Practice & proof
+            </h2>
+          </div>
+          <p className="mt-3 max-w-[58ch] text-pretty text-base leading-7 text-gray-300">
+            Project history and problem-solving practice stay closest to their
+            sources.
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* LeetCode Card */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              LeetCode Progress
-            </h3>
-            <div className="flex justify-center">
-              <Image
-                src="https://leetcard.jacoblin.cool/ifti_taha?ext=heatmap"
-                alt="LeetCode Stats"
-                width={500}
-                height={300}
-                className="rounded-lg"
-              />
-            </div>
-          </div>
+          <div className="mt-5 divide-y divide-white/10 rounded-lg border border-white/10">
+            {practiceLinks.map((item) => {
+              const Icon = item.icon;
 
-          {/* GitHub Stats */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              GitHub Statistics
-            </h3>
-            <div className="flex justify-center">
-              <Image
-                src="https://github-readme-stats.vercel.app/api?username=dexter-ifti&theme=dark&hide_border=true"
-                alt="GitHub Stats"
-                width={500}
-                height={200}
-                className="rounded-lg"
-              />
-            </div>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between gap-4 px-4 py-4 outline-none transition-colors hover:bg-white/[0.04] focus-visible:bg-white/[0.04] focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
+                >
+                  <span className="flex min-w-0 items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-neutral-800 text-gray-200">
+                      <Icon aria-hidden="true" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block font-medium text-white">
+                        {item.label}
+                      </span>
+                      <span className="block text-sm leading-6 text-gray-400">
+                        {item.detail}
+                      </span>
+                    </span>
+                  </span>
+                  <FiArrowUpRight
+                    className="h-4 w-4 shrink-0 text-gray-500 transition-colors group-hover:text-white"
+                    aria-hidden="true"
+                  />
+                </Link>
+              );
+            })}
           </div>
-
-          {/* GitHub Streak */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              GitHub Streak
-            </h3>
-            <div className="flex justify-center">
-              <Image
-                src="https://github-readme-streak-stats.herokuapp.com/?user=dexter-ifti&theme=dark&hide_border=true"
-                alt="GitHub Streak"
-                width={500}
-                height={200}
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-
-          {/* Top Languages */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Most Used Languages
-            </h3>
-            <div className="flex justify-center">
-              <Image
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=dexter-ifti&theme=dark&hide_border=true&layout=compact"
-                alt="Top Languages"
-                width={400}
-                height={300}
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

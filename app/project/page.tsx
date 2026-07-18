@@ -5,7 +5,7 @@ import BackButton from "@/components/shared/back";
 
 export default function Project() {
   return (
-    <main className="min-h-screen container items-center justify-center flex-col">
+    <main className="container mx-auto min-h-screen items-center justify-center flex-col">
       <div className="flex md:mt-4 flex-col max-w-[512px] mx-auto p-5 lg:p-0">
         <div className="container">
           <BackButton />

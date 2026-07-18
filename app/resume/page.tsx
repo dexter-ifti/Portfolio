@@ -2,7 +2,7 @@ import BackButton from "@/components/shared/back";
 
 export default function Resume() {
   return (
-    <main className="min-h-screen py-10 px-4 container">
+    <main className="container mx-auto min-h-screen py-10 px-4">
       <div className="max-w-[512px] mx-auto">
         <BackButton />
         <h1 className="my-4 text-3xl font-bold text-white">My Resume</h1>

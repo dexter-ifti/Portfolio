@@ -49,7 +49,7 @@ async function ProjectPage(props: Props) {
     (p) => encodeURIComponent(p.slug) === encodeURIComponent(props.params.name)
   )!;
   return (
-    <div className="min-h-screen lg:pt-20 lg:p-0 p-5 container items-center justify-center flex-col lg:max-w-xl overflow-hidden">
+    <div className="container mx-auto min-h-screen lg:pt-20 lg:p-0 p-5 items-center justify-center flex-col lg:max-w-xl overflow-hidden">
       <BackButton />
 
       <ImageWithLoader

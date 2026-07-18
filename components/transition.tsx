@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import TextTransition from "./text";
 import { config } from "@react-spring/web";
-const TEXTS = ["website", "backend", "app"];
+const TEXTS = ["website", "backend", "app", "workflow"];
 
 export default function Transition() {
   const [index, setIndex] = useState(0);

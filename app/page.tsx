@@ -20,44 +20,20 @@ export default function Home() {
       : 0);
 
   return (
-    <main className="min-h-screen pt-10 container items-center justify-center flex-col">
-      <div className="content-center items-center flex flex-none flex-col flex-nowrap gap-2.5 h-min justify-center overflow-visible relative w-full px-4 py-0">
-        <div className="container max-w-[512px] flex flex-row items-center justify-between">
-          <div className="flex flex-row items-center">
-            <Image
-              src="/pfp.png"
-              alt="Taha"
-              width={44}
-              height={44}
-              className="rounded-full"
-            />
-            <div className="flex flex-col ml-2">
-              <h1 className="text-base font-bold text-white">Taha </h1>
-              <span className="text-sm text-gray-400">@DexterIfti</span>
-            </div>
-          </div>
-          
-          {/* Resume Button */}
-          <Link
-            href="/resume"
-            className="text-sm text-gray-400 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-gray-400 rounded-md px-3 py-1.5"
-          >
-            Resume
-          </Link>
-        </div>
-      </div>
-      <div className="flex mt-8 flex-col max-w-[512px] mx-auto p-5 lg:p-0">
+    <main className="container mx-auto min-h-screen pt-6 items-center justify-center flex-col">
+      <div className="flex mt-8 flex-col max-w-[640px] mx-auto p-5 lg:p-0">
         <div className="container">
           <h1 className="text-xl font-bold text-gray-400">
             I make
             <Transition />
           </h1>
           <p className="mt-3 text-xl text-gray-400">
-            I&apos;m Taha a.k.a. dexter_ifti, a {age} year old developer living in India. I am
-            a self-taught developer who loves to code and make things.
+            I&apos;m Taha a.k.a. dexter_ifti, a {age} year old developer living
+            in India. I build backend-heavy web products, AI agent workflows,
+            retrieval pipelines, and clean interfaces around them.
           </p>
           <p className="mt-3 text-xl text-gray-400">
-            messing with{" "}
+            Working with{" "}
             <Badge href="https://expressjs.com">
               <Image
                 src="/express-logo.svg"
@@ -108,8 +84,12 @@ export default function Home() {
                 className="inline-block mr-1"
               />
               PostgreSQL
-            </Badge>{" "}
-            and some other tooling.
+            </Badge>
+            ,{" "}
+            <Badge href="https://www.langchain.com/">LangChain</Badge>
+            ,{" "}
+            <Badge href="https://platform.openai.com/docs">OpenAI SDK</Badge>,
+            RAG, agents, and automation tooling.
           </p>
         </div>
         <div className="flex items-start mt-3 w-full justify-start flex-col">
@@ -228,74 +208,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Skills Section */}
-        <div className="mt-5">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl text-white mt-5 mb-5">Skills</h1>
-            {/* <Link href="/skills" className="text-neutral-500 hover:underline">
-              more
-            </Link> */}
-          </div>
+        <section className="mt-8">
+          <h2 className="text-2xl text-white mt-5 mb-4">GitHub activity</h2>
+          <a
+            href="https://github.com/dexter-ifti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-lg border border-neutral-800 bg-neutral-900/50 p-3 outline-none transition-colors hover:border-neutral-700 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
+            aria-label="View Taha's GitHub profile"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element -- ghchart serves a remote SVG contribution graph. */}
+            <img
+              src="https://ghchart.rshah.org/7F461B/dexter-ifti"
+              alt="Taha's GitHub contribution chart"
+              className="w-full"
+              loading="lazy"
+            />
+          </a>
+        </section>
 
-          {/* Programming Languages */}
-          <div className="mb-4">
-            <h2 className="text-lg text-gray-300 mb-2">Programming Languages</h2>
-            <div className="flex flex-wrap gap-2">
-              {["JavaScript", "TypeScript", "Python", "Java", "C Language"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-yellow-100/10 text-yellow-300 rounded-full text-sm font-medium border border-yellow-300/20"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-          {/* Backend Skills */}
-          <div className="mb-4">
-            <h2 className="text-lg text-gray-300 mb-2">Backend</h2>
-            <div className="flex flex-wrap gap-2">
-              {["Node.js", "Express.js", "HonoJS", "MongoDB", "PostgreSQL", "Redis", "Prisma ORM", "Mongoose", "MySQL"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-green-100/10 text-green-300 rounded-full text-sm font-medium border border-green-300/20"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Frontend Skills */}
-          <div className="mb-4">
-            <h2 className="text-lg text-gray-300 mb-2">Frontend</h2>
-            <div className="flex flex-wrap gap-2">
-              {["HTML5", "CSS3", "React JS", "Tailwind CSS", "Context API"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-blue-100/10 text-blue-300 rounded-full text-sm font-medium border border-blue-300/20"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Tools & Technologies */}
-          <div className="mb-4">
-            <h2 className="text-lg text-gray-300 mb-2">Tools & Technologies</h2>
-            <div className="flex flex-wrap gap-2">
-              {["Git", "Docker", "Cloudflare", "AWS", "Postman"].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-purple-100/10 text-purple-300 rounded-full text-sm font-medium border border-purple-300/20"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </main>
   );

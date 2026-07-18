@@ -4,6 +4,7 @@ const font = Hanken_Grotesk({ subsets: ["latin"] });
 import { OpenPanelComponent } from '@openpanel/nextjs';
 import Script from "next/script";
 import { Metadata } from "next";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ifti.tech"),
@@ -61,11 +62,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${font.className} bg-[#111010] flex justify-center`}>
+      <body className={`${font.className} bg-[#111010] text-white`}>
         <OpenPanelComponent
           clientId="89e02301-b6bb-4341-a2b4-29d138532b7b"
           trackScreenViews={true}
         />
+        <Navbar />
         {children}
         <Script src="/oneko.js" strategy="afterInteractive" />
       </body>
