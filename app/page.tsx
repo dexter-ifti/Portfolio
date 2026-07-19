@@ -1,11 +1,23 @@
 import Transition from "@/components/transition";
 import { AiOutlineRight, AiOutlineMail } from "react-icons/ai";
-import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { FiArrowUpRight, FiFileText, FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
 import { Projects } from "@/constants";
 import Badge from "@/components/badge";
 import Image from "next/image";
 import Link from "next/link";
 import WorkExperience from "@/components/workexp";
+import Blog from "@/components/blog";
+
+const coreStack = [
+  "JavaScript",
+  "TypeScript",
+  "PostgreSQL",
+  "OpenAI SDK",
+  "Redis",
+  "Docker",
+  "Backend",
+  "Gen AI",
+];
 
 export default function Home() {
   const birthDate = new Date("2004-07-08");
@@ -91,6 +103,34 @@ export default function Home() {
             <Badge href="https://platform.openai.com/docs">OpenAI SDK</Badge>,
             RAG, agents, and automation tooling.
           </p>
+          <section
+            aria-labelledby="core-stack"
+            className="mt-5 border-y border-white/10 py-4"
+          >
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h2
+                  id="core-stack"
+                  className="text-sm font-semibold text-gray-200"
+                >
+                  Core stack
+                </h2>
+                <p className="mt-1 text-sm leading-6 text-gray-400">
+                  Backend systems and Gen AI workflows.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 sm:max-w-[390px] sm:justify-end">
+                {coreStack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm font-medium text-gray-200"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
         <div className="flex items-start mt-3 w-full justify-start flex-col">
           <Link
@@ -174,6 +214,22 @@ export default function Home() {
               <AiOutlineMail className="text-white text-xl" />
             </a>
           </div>
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <Link
+              href="/resume"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 outline-none transition-colors hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
+            >
+              <FiFileText aria-hidden="true" />
+              View resume
+            </Link>
+            <a
+              href="mailto:tahaiftikhar8@gmail.com"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-gray-200 outline-none transition-colors hover:bg-white/[0.08] hover:text-white focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
+            >
+              <AiOutlineMail aria-hidden="true" />
+              Email me
+            </a>
+          </div>
         </div>
         <div className="w-full h-[1px] "></div>
          <WorkExperience /> 
@@ -209,6 +265,16 @@ export default function Home() {
         </div>
 
         <section className="mt-8">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl text-white mt-5 mb-5">Blogs</h2>
+            <Link href="/blog" className="text-neutral-500 hover:underline">
+              more
+            </Link>
+          </div>
+          <Blog limit={2} />
+        </section>
+
+        <section className="mt-8">
           <h2 className="text-2xl text-white mt-5 mb-4">GitHub activity</h2>
           <a
             href="https://github.com/dexter-ifti"
@@ -225,6 +291,55 @@ export default function Home() {
               loading="lazy"
             />
           </a>
+        </section>
+
+        <section className="mt-10 border-t border-white/10 py-8">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 className="text-2xl text-white">Contact</h2>
+              <p className="mt-3 max-w-[56ch] text-pretty text-base leading-7 text-gray-300">
+                Building a backend-heavy product, AI workflow, or developer
+                tool? Send the context and I&apos;ll reply with the clearest
+                next step.
+              </p>
+            </div>
+            <a
+              href="mailto:tahaiftikhar8@gmail.com"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-neutral-700 px-4 py-2.5 text-sm font-semibold text-white outline-none transition-colors hover:bg-neutral-900 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
+            >
+              tahaiftikhar8@gmail.com
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+          </div>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm">
+            <a
+              href="https://github.com/dexter-ifti"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-400 outline-none transition-colors hover:text-white focus-visible:text-white"
+            >
+              GitHub
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ifti-taha/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-400 outline-none transition-colors hover:text-white focus-visible:text-white"
+            >
+              LinkedIn
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.x.com/DexterIfti/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-gray-400 outline-none transition-colors hover:text-white focus-visible:text-white"
+            >
+              X/Twitter
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+          </div>
         </section>
 
       </div>
