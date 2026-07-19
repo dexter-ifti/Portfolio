@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/project", label: "Projects" },
+  { href: "/blog", label: "Blog" },
   { href: "/skills", label: "Skills" },
   { href: "/resume", label: "Resume" },
 ];
@@ -39,7 +40,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <div className="grid w-full grid-cols-4 gap-1 rounded-lg bg-white/[0.03] p-1 sm:w-auto">
+        <div className="grid w-full grid-cols-5 gap-1 rounded-lg bg-white/[0.03] p-1 sm:w-auto">
           {navItems.map((item) => {
             const isActive =
               item.href === "/"
@@ -51,7 +52,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`rounded-md px-2.5 py-1.5 text-center text-sm font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#171616] ${
+                className={`rounded-md px-1.5 py-1.5 text-center text-xs font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#171616] sm:px-2.5 sm:text-sm ${
                   isActive
                     ? "bg-white text-neutral-950"
                     : "text-gray-400 hover:bg-white/10 hover:text-white"
