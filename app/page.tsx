@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WorkExperience from "@/components/workexp";
 import Blog from "@/components/blog";
+import GithubStats from "@/components/githubstats";
 
 const coreStack = [
   "JavaScript",
@@ -275,22 +276,18 @@ export default function Home() {
         </section>
 
         <section className="mt-8">
-          <h2 className="text-2xl text-white mt-5 mb-4">GitHub activity</h2>
-          <a
-            href="https://github.com/dexter-ifti"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-neutral-800 bg-neutral-900/50 p-3 outline-none transition-colors hover:border-neutral-700 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#111010]"
-            aria-label="View Taha's GitHub profile"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element -- ghchart serves a remote SVG contribution graph. */}
-            <img
-              src="https://ghchart.rshah.org/7F461B/dexter-ifti"
-              alt="Taha's GitHub contribution chart"
-              className="w-full"
-              loading="lazy"
-            />
-          </a>
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl text-white mt-5 mb-4">GitHub activity</h2>
+            <a
+              href="https://github.com/dexter-ifti"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-500 hover:underline"
+            >
+              view profile
+            </a>
+          </div>
+          <GithubStats username="dexter-ifti" />
         </section>
 
         <section className="mt-10 border-t border-white/10 py-8">
