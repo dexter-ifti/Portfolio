@@ -18,7 +18,7 @@ const experiences: WorkExperience[] = [
     company: "Digital Biz Tech",
     position: "Full Stack Gen AI Engineer",
     location: "Remote",
-    duration: "May 2026 - Persent",
+    duration: "May 2026 - Present",
     link: "https://digitalbiz.tech/",
     image: "https://www.digitalbiz.tech/img/dbt-logo-white.svg",
   },

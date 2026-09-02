@@ -112,7 +112,7 @@ async function ProjectPage(props: Props) {
     <main className="container mx-auto min-h-screen px-5 pb-16 pt-6">
       <div className="mx-auto flex max-w-[760px] flex-col">
         <div className="w-fit">
-          <BackButton />
+          <BackButton fallbackUrl="/project" label="All projects" />
         </div>
 
         <header className="mt-8 grid gap-6 lg:grid-cols-[1fr_15rem] lg:items-start">

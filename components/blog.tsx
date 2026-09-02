@@ -16,12 +16,12 @@ export default function Blog({ limit }: BlogProps) {
           <article className="group grid gap-3 py-4 sm:grid-cols-[1fr_auto] sm:items-start">
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                <h3 className="text-lg font-medium leading-[1.3em] text-gray-300 transition-colors group-hover:text-white">
+                <h3 className="text-lg font-medium leading-[1.3em] text-gray-300">
                   {post.title}
                 </h3>
                 {post.status === "draft" ? (
-                  <span className="rounded-full border border-amber-300/20 bg-amber-300/10 px-2 py-0.5 text-xs font-medium text-amber-200">
-                    Draft
+                  <span className="rounded-full border border-amber-300/30 bg-amber-300/10 px-2 py-0.5 text-[11px] font-medium text-amber-300">
+                    Draft • Forthcoming
                   </span>
                 ) : null}
               </div>

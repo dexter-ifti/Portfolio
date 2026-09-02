@@ -22,7 +22,7 @@ export default function BlogPage() {
     <main className="container mx-auto min-h-screen px-5 pb-16 pt-6">
       <div className="mx-auto flex max-w-[640px] flex-col">
         <div className="w-fit">
-          <BackButton />
+          <BackButton fallbackUrl="/" />
         </div>
 
         <section className="mt-8 pb-7">

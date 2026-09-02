@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { Projects } from '@/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ifti.tech'
+  const baseUrl = 'https://ifti.engineer'
   
   // Base routes
   const routes = [
