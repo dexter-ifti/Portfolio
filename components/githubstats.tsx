@@ -69,11 +69,11 @@ function clearCache(username: string) {
 }
 
 function levelColorClass(count: number) {
-  if (count <= 0) return "bg-neutral-800";
-  if (count < 3) return "bg-amber-900";
-  if (count < 6) return "bg-amber-700";
-  if (count < 10) return "bg-amber-500";
-  return "bg-amber-300";
+  if (count <= 0) return "bg-neutral-200 dark:bg-neutral-800";
+  if (count < 3) return "bg-amber-300 dark:bg-amber-900";
+  if (count < 6) return "bg-amber-400 dark:bg-amber-700";
+  if (count < 10) return "bg-amber-500 dark:bg-amber-500";
+  return "bg-amber-600 dark:bg-amber-300";
 }
 
 function formatDate(dateStr: string) {
@@ -107,7 +107,7 @@ function ContributionHeatmap({ weeks }: { weeks: ContributionWeek[] }) {
 
           return (
             <div key={weekIndex} className="flex flex-col gap-[3px]">
-              <span className="mb-0.5 block h-3 text-[10px] leading-3 text-neutral-500">
+              <span className="mb-0.5 block h-3 text-[10px] leading-3 text-neutral-500 dark:text-neutral-400">
                 {showMonthLabel && currentMonth !== null
                   ? MONTH_LABELS[currentMonth]
                   : ""}
@@ -119,7 +119,7 @@ function ContributionHeatmap({ weeks }: { weeks: ContributionWeek[] }) {
                     title={`${day.contributionCount} contribution${
                       day.contributionCount === 1 ? "" : "s"
                     } on ${formatDate(day.date)}`}
-                    className={`h-[10px] w-[10px] rounded-sm ${levelColorClass(day.contributionCount)}`}
+                    className={`h-[10px] w-[10px] rounded-sm transition-colors ${levelColorClass(day.contributionCount)}`}
                   />
                 ) : (
                   <div key={i} className="h-[10px] w-[10px]" aria-hidden="true" />
@@ -181,17 +181,17 @@ const GithubStats = ({ username }: { username: string }) => {
   };
 
   return (
-    <div className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-5 outline-none transition-colors hover:border-neutral-700">
+    <div className="rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/50 p-5 shadow-sm dark:shadow-none outline-none transition-colors hover:border-neutral-300 dark:hover:border-neutral-700">
       <div className="flex items-center justify-between gap-3">
         {loading ? (
           <div
-            className="h-4 w-40 animate-pulse rounded bg-neutral-800"
+            className="h-4 w-40 animate-pulse rounded bg-neutral-200 dark:bg-neutral-800"
             aria-hidden="true"
           />
         ) : error ? (
-          <p className="text-sm text-red-400">{error}</p>
+          <p className="text-sm text-red-500 dark:text-red-400">{error}</p>
         ) : (
-          <p className="text-xs text-neutral-500">
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 font-medium">
             {data?.calendar.totalContributions.toLocaleString()} contributions
             in the last 8 months
           </p>
@@ -201,7 +201,7 @@ const GithubStats = ({ username }: { username: string }) => {
           onClick={handleRefresh}
           disabled={loading}
           aria-label="Refresh GitHub stats"
-          className="shrink-0 rounded-md border border-neutral-700 p-2 text-neutral-300 transition-colors hover:border-neutral-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+          className="shrink-0 rounded-md border border-neutral-300 dark:border-neutral-700 p-2 text-neutral-600 dark:text-neutral-300 transition-colors hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-900 dark:hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
         >
           <FiRefreshCw className={loading ? "animate-spin" : ""} aria-hidden="true" />
         </button>
@@ -210,19 +210,19 @@ const GithubStats = ({ username }: { username: string }) => {
       <div className="mt-3">
         {loading ? (
           <div
-            className="h-[100px] w-full animate-pulse rounded bg-neutral-800"
+            className="h-[100px] w-full animate-pulse rounded bg-neutral-200 dark:bg-neutral-800"
             aria-hidden="true"
           />
         ) : error || !data?.calendar ? null : (
           <>
             <ContributionHeatmap weeks={data.calendar.weeks} />
-            <div className="mt-2 flex items-center justify-end gap-1 text-[10px] text-neutral-500">
+            <div className="mt-2 flex items-center justify-end gap-1 text-[10px] text-neutral-600 dark:text-neutral-400">
               <span>Less</span>
-              <span className="h-[10px] w-[10px] rounded-sm bg-neutral-800" />
-              <span className="h-[10px] w-[10px] rounded-sm bg-amber-900" />
-              <span className="h-[10px] w-[10px] rounded-sm bg-amber-700" />
-              <span className="h-[10px] w-[10px] rounded-sm bg-amber-500" />
-              <span className="h-[10px] w-[10px] rounded-sm bg-amber-300" />
+              <span className="h-[10px] w-[10px] rounded-sm bg-neutral-200 dark:bg-neutral-800" />
+              <span className="h-[10px] w-[10px] rounded-sm bg-amber-300 dark:bg-amber-900" />
+              <span className="h-[10px] w-[10px] rounded-sm bg-amber-400 dark:bg-amber-700" />
+              <span className="h-[10px] w-[10px] rounded-sm bg-amber-500 dark:bg-amber-500" />
+              <span className="h-[10px] w-[10px] rounded-sm bg-amber-600 dark:bg-amber-300" />
               <span>More</span>
             </div>
           </>
