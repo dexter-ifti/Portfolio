@@ -1,0 +1,38 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">HealthLab medical AI report reviewer platform preview placeholder</title>
+  <desc id="desc">A dark clinical dashboard-style placeholder with biomarker panels, trend charts, report comparison, and AI chat.</desc>
+  <rect width="1200" height="675" fill="#111010"/>
+  <rect x="88" y="70" width="1024" height="535" rx="16" fill="#151515" stroke="#2A2A2A"/>
+  <rect x="124" y="106" width="240" height="463" rx="10" fill="#0F0F0F" stroke="#2F2F2F"/>
+  <rect x="152" y="138" width="92" height="92" rx="46" fill="#134E4A"/>
+  <path d="M198 160V208M174 184H222" stroke="#99F6E4" stroke-width="10" stroke-linecap="round"/>
+  <rect x="152" y="260" width="156" height="16" rx="8" fill="#F5F5F5"/>
+  <rect x="152" y="296" width="180" height="10" rx="5" fill="#71717A"/>
+  <rect x="152" y="342" width="176" height="42" rx="9" fill="#1F2937"/>
+  <rect x="152" y="400" width="144" height="42" rx="9" fill="#27272A"/>
+  <rect x="152" y="458" width="168" height="42" rx="9" fill="#27272A"/>
+  <rect x="396" y="106" width="336" height="214" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="424" y="136" width="176" height="15" rx="7.5" fill="#F5F5F5"/>
+  <rect x="424" y="182" width="60" height="88" rx="8" fill="#99F6E4"/>
+  <rect x="504" y="214" width="60" height="56" rx="8" fill="#A7F3D0"/>
+  <rect x="584" y="166" width="60" height="104" rx="8" fill="#FBBF24"/>
+  <rect x="664" y="198" width="40" height="72" rx="8" fill="#FB7185"/>
+  <rect x="396" y="348" width="336" height="221" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="424" y="378" width="132" height="14" rx="7" fill="#F5F5F5"/>
+  <path d="M428 508C456 448 494 486 526 444C558 402 596 430 628 394C660 358 684 382 704 348" stroke="#99F6E4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M428 532C458 516 488 522 520 502C552 482 584 502 616 474C648 446 678 464 704 442" stroke="#FBBF24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="764" y="106" width="312" height="204" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="792" y="136" width="156" height="14" rx="7" fill="#F5F5F5"/>
+  <rect x="792" y="178" width="244" height="1" fill="#3F3F46"/>
+  <rect x="792" y="206" width="118" height="12" rx="6" fill="#A7F3D0"/>
+  <rect x="936" y="206" width="72" height="12" rx="6" fill="#71717A"/>
+  <rect x="792" y="248" width="92" height="12" rx="6" fill="#FB7185"/>
+  <rect x="916" y="248" width="112" height="12" rx="6" fill="#71717A"/>
+  <rect x="764" y="338" width="312" height="231" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="792" y="368" width="142" height="14" rx="7" fill="#F5F5F5"/>
+  <rect x="792" y="412" width="224" height="38" rx="9" fill="#18181B"/>
+  <rect x="816" y="426" width="150" height="10" rx="5" fill="#A7F3D0"/>
+  <rect x="832" y="470" width="204" height="38" rx="9" fill="#1F2937"/>
+  <rect x="856" y="484" width="128" height="10" rx="5" fill="#F5F5F5"/>
+  <rect x="792" y="526" width="154" height="16" rx="8" fill="#3F3F46"/>
+</svg>

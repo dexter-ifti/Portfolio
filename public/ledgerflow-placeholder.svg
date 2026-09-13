@@ -1,0 +1,43 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LedgerFlow invoice processing platform preview placeholder</title>
+  <desc id="desc">A dark interface-style placeholder with invoice rows, confidence markers, and verification panels.</desc>
+  <rect width="1200" height="675" fill="#111010"/>
+  <rect x="96" y="76" width="1008" height="523" rx="16" fill="#171717" stroke="#2A2A2A"/>
+  <rect x="128" y="112" width="208" height="451" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="152" y="144" width="96" height="14" rx="7" fill="#F5F5F5"/>
+  <rect x="152" y="178" width="152" height="10" rx="5" fill="#71717A"/>
+  <rect x="152" y="222" width="144" height="40" rx="8" fill="#27272A"/>
+  <rect x="152" y="278" width="128" height="40" rx="8" fill="#1F2937"/>
+  <rect x="152" y="334" width="156" height="40" rx="8" fill="#27272A"/>
+  <rect x="152" y="390" width="118" height="40" rx="8" fill="#27272A"/>
+  <rect x="152" y="486" width="152" height="12" rx="6" fill="#3F3F46"/>
+  <rect x="376" y="112" width="392" height="451" rx="10" fill="#0F0F0F" stroke="#2F2F2F"/>
+  <rect x="408" y="148" width="184" height="18" rx="9" fill="#F5F5F5"/>
+  <rect x="408" y="190" width="304" height="12" rx="6" fill="#52525B"/>
+  <rect x="408" y="226" width="328" height="1" fill="#3F3F46"/>
+  <rect x="408" y="258" width="112" height="12" rx="6" fill="#A7F3D0"/>
+  <rect x="548" y="258" width="96" height="12" rx="6" fill="#52525B"/>
+  <rect x="676" y="258" width="44" height="12" rx="6" fill="#FBBF24"/>
+  <rect x="408" y="306" width="150" height="12" rx="6" fill="#F5F5F5"/>
+  <rect x="588" y="306" width="72" height="12" rx="6" fill="#52525B"/>
+  <rect x="688" y="306" width="32" height="12" rx="6" fill="#A7F3D0"/>
+  <rect x="408" y="354" width="128" height="12" rx="6" fill="#F5F5F5"/>
+  <rect x="568" y="354" width="92" height="12" rx="6" fill="#52525B"/>
+  <rect x="688" y="354" width="32" height="12" rx="6" fill="#A7F3D0"/>
+  <rect x="408" y="402" width="164" height="12" rx="6" fill="#F5F5F5"/>
+  <rect x="604" y="402" width="56" height="12" rx="6" fill="#52525B"/>
+  <rect x="688" y="402" width="32" height="12" rx="6" fill="#FB7185"/>
+  <rect x="408" y="486" width="296" height="44" rx="10" fill="#27272A"/>
+  <rect x="800" y="112" width="272" height="451" rx="10" fill="#101010" stroke="#2F2F2F"/>
+  <rect x="832" y="148" width="144" height="14" rx="7" fill="#F5F5F5"/>
+  <rect x="832" y="196" width="208" height="70" rx="10" fill="#18181B" stroke="#3F3F46"/>
+  <rect x="856" y="220" width="124" height="10" rx="5" fill="#A7F3D0"/>
+  <rect x="856" y="242" width="76" height="10" rx="5" fill="#71717A"/>
+  <rect x="832" y="290" width="208" height="70" rx="10" fill="#18181B" stroke="#3F3F46"/>
+  <rect x="856" y="314" width="108" height="10" rx="5" fill="#FBBF24"/>
+  <rect x="856" y="336" width="132" height="10" rx="5" fill="#71717A"/>
+  <rect x="832" y="384" width="208" height="70" rx="10" fill="#18181B" stroke="#3F3F46"/>
+  <rect x="856" y="408" width="144" height="10" rx="5" fill="#F5F5F5"/>
+  <rect x="856" y="430" width="92" height="10" rx="5" fill="#71717A"/>
+  <rect x="832" y="494" width="116" height="36" rx="8" fill="#F5F5F5"/>
+</svg>
