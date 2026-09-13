@@ -107,6 +107,10 @@ async function ProjectPage(props: Props) {
 
   const caseStudy = ProjectCaseStudies[project.slug];
   const projectLinks = Object.entries(project.urls).filter((entry) => entry[1]);
+  const primaryProjectUrl =
+    project.urls.githubUrl ??
+    project.urls.liveUrl ??
+    Object.values(project.urls).find(Boolean);
 
   return (
     <main className="container mx-auto min-h-screen px-5 pb-16 pt-6">
@@ -188,6 +192,29 @@ async function ProjectPage(props: Props) {
           </>
         ) : null}
 
+        {caseStudy?.screenshots?.length ? (
+          <section className="border-t border-white/10 py-7">
+            <h2 className="text-xl font-semibold text-white">Screenshots</h2>
+            <div className="mt-4 grid gap-4">
+              {caseStudy.screenshots.map((screenshot) => (
+                <figure
+                  key={screenshot.src}
+                  className="overflow-hidden rounded-lg border border-white/10 bg-neutral-900/40"
+                >
+                  <ImageWithLoader
+                    className="h-auto w-full object-cover"
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    width={screenshot.width}
+                    height={screenshot.height}
+                    loading="lazy"
+                  />
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
         <section className="border-t border-white/10 py-7">
           <h2 className="text-xl font-semibold text-white">Stack</h2>
           <div className="mt-4 flex flex-row flex-wrap items-center justify-start gap-2">
@@ -202,24 +229,22 @@ async function ProjectPage(props: Props) {
           </div>
         </section>
 
-        <section className="border-t border-white/10 py-7">
-          <a
-            href={
-              project.urls.githubUrl ??
-              project.urls.liveUrl ??
-              Object.values(project.urls).find(Boolean)
-            }
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-300 outline-none transition-colors hover:text-white focus-visible:text-white"
-          >
-            Open project
-            <FiArrowUpRight
-              aria-hidden="true"
-              className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            />
-          </a>
-        </section>
+        {primaryProjectUrl ? (
+          <section className="border-t border-white/10 py-7">
+            <a
+              href={primaryProjectUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-300 outline-none transition-colors hover:text-white focus-visible:text-white"
+            >
+              Open project
+              <FiArrowUpRight
+                aria-hidden="true"
+                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
+          </section>
+        ) : null}
       </div>
     </main>
   );
