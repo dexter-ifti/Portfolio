@@ -36,7 +36,13 @@ export default function WorkExperience() {
             target="_blank"
           >
             <article className="mt-3 mb-3 flex md:items-center items-start">
-              <Image src={exp.image} alt={exp.company} width={20} height={20} className="w-10 h-10 mr-3 rounded-md mt-0.5 md:mt-0" />
+              <Image
+                src={exp.image}
+                alt={exp.company}
+                width={20}
+                height={20}
+                className="mt-0.5 mr-3 h-10 w-10 rounded-md bg-neutral-900 p-1 md:mt-0 dark:bg-transparent dark:p-0"
+              />
               <div className="flex-grow">
                 <div className="flex justify-between items-center">
                   <h1 className="text-lg font-medium leading-[1.3em] text-left text-gray-300">
