@@ -19,6 +19,62 @@ interface Project {
 
 export const Projects: Project[] = [
   {
+    name: "LedgerFlow - Multi-tenant Invoice Processing Platform",
+    slug: "ledgerflow-invoice-processing",
+    image: {
+      url: "/Invoice-Processin-Platform/invoice-side-by-side-checker.png",
+      width: 1883,
+      height: 974,
+      alt: "LedgerFlow side-by-side invoice verification interface",
+    },
+    urls: {},
+    description:
+      "A multi-tenant invoice intelligence SaaS for finance and AP teams, with AI OCR extraction, per-field confidence, duplicate detection, Gmail ingestion, Stripe billing, and human audit verification.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Mistral OCR",
+      "Stripe",
+      "Supabase",
+      "Multi-tenant SaaS",
+    ],
+  },
+  {
+    name: "HealthLab - Medical AI Report Reviewer Platform",
+    slug: "healthlab-medical-ai-reviewer",
+    image: {
+      url: "/ai-medical-report/report-view-dashboard-1.png",
+      width: 1880,
+      height: 1006,
+      alt: "HealthLab clinical report review dashboard",
+    },
+    urls: {},
+    description:
+      "A medical SaaS platform that turns raw lab report PDFs into structured health intelligence with PHI masking, biomarker extraction, trends, report comparison, branded PDFs, and RAG-grounded AI chat.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "OpenAI",
+      "Mistral OCR",
+      "LangChain",
+      "pgvector",
+      "Docker",
+    ],
+  },
+  {
     name: "tinyqueue - redis-backed job queue",
     slug: "tinyqueue",
     image: {
@@ -69,6 +125,30 @@ export const Projects: Project[] = [
     ]
   },
   {
+    name: "paypulse",
+    slug: "paypulse",
+    image: {
+      url: "/paypulse.png",
+      width: 400,
+      height: 200,
+      alt: "PayPulse - Payment App"
+    },
+    urls: {
+      liveUrl: "https://pay-pulse-roan.vercel.app/",
+      githubUrl: "https://github.com/dexter-ifti/PayPulse"
+    },
+    description: "A Paytm-like payment application enabling secure money transfers and balance checking with robust financial transaction handling and data integrity.",
+    tags: [
+      "ReactJS",
+      "ExpressJS",
+      "MongoDB",
+      "Tailwind CSS",
+      "Zod",
+      "JWT",
+      "Database Transactions"
+    ]
+  },
+  {
     name: "mini-cursor",
     slug: "mini-cursor",
     image: {
@@ -114,30 +194,6 @@ export const Projects: Project[] = [
       "Prisma ORM",
       "REST API",
       "Redis"
-    ]
-  },
-  {
-    name: "paypulse",
-    slug: "paypulse",
-    image: {
-      url: "/paypulse.png",
-      width: 400,
-      height: 200,
-      alt: "PayPulse - Payment App"
-    },
-    urls: {
-      liveUrl: "https://pay-pulse-roan.vercel.app/",
-      githubUrl: "https://github.com/dexter-ifti/PayPulse"
-    },
-    description: "A Paytm-like payment application enabling secure money transfers and balance checking with robust financial transaction handling and data integrity.",
-    tags: [
-      "ReactJS",
-      "ExpressJS",
-      "MongoDB",
-      "Tailwind CSS",
-      "Zod",
-      "JWT",
-      "Database Transactions"
     ]
   },
   {

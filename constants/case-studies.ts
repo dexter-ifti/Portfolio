@@ -1,3 +1,10 @@
+interface CaseStudyScreenshot {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface ProjectCaseStudy {
   summary: string;
   role: string;
@@ -7,9 +14,148 @@ export interface ProjectCaseStudy {
   decisions: string[];
   tradeoffs: string[];
   learned: string[];
+  screenshots?: CaseStudyScreenshot[];
 }
 
 export const ProjectCaseStudies: Record<string, ProjectCaseStudy> = {
+  "ledgerflow-invoice-processing": {
+    summary:
+      "A multi-tenant invoice document intelligence platform that extracts, verifies, and routes invoice data for finance and accounts payable teams.",
+    role: "Full-stack SaaS, AI extraction pipeline, tenant isolation",
+    status: "Client product",
+    problem:
+      "Finance teams receive invoices across PDFs, images, email inboxes, and vendor formats. The platform needed to reduce manual keying while keeping humans in control of low-confidence fields, duplicate detection, and invoice math checks.",
+    architecture: [
+      "React, TypeScript, Vite, and Tailwind power the audit dashboard, team flows, and side-by-side document verification viewer.",
+      "Python 3.12 and FastAPI run the async backend with request IDs, rate limiting, tenant middleware, and scheduled background jobs.",
+      "Mistral OCR converts invoice PDFs and images into markdown before structured extraction maps vendor, invoice, tax, total, GL code, and line-item fields.",
+      "PostgreSQL with SQLModel, SQLAlchemy, Alembic, and native row-level security isolates tenant data across the application tables.",
+      "Gmail OAuth polling, Google Drive filing, Supabase Auth and Storage, Stripe subscriptions, and LLM usage logs connect ingestion, billing, storage, and telemetry.",
+    ],
+    decisions: [
+      "Used a human-in-the-loop verification surface instead of silently accepting every model output.",
+      "Logged token, cost, latency, and status transitions so tenant-level usage and operational behavior stay visible.",
+      "Added duplicate-hash protection and math validation because invoice correctness matters more than raw extraction speed.",
+      "Built fallback extraction paths so OCR failures degrade visibly instead of blocking the entire workflow.",
+    ],
+    tradeoffs: [
+      "A multi-tenant architecture raises implementation complexity, but it is necessary for finance teams, roles, billing, and tenant-level audit trails.",
+      "Per-field confidence creates more UI state, but it focuses reviewers on risky values instead of forcing full manual re-review.",
+      "Background polling and retry jobs improve automation, but they require clear observability and failure handling.",
+    ],
+    learned: [
+      "Invoice AI is not just OCR; the hard part is confidence, verification, duplicate prevention, and accounting-rule visibility.",
+      "Tenant isolation works best when it is enforced at the database layer and reinforced by application middleware.",
+      "Cost telemetry is product infrastructure when every document can trigger multiple AI calls.",
+    ],
+    screenshots: [
+      {
+        src: "/Invoice-Processin-Platform/dashboard.png",
+        alt: "LedgerFlow dashboard with invoice status overview",
+        width: 1883,
+        height: 974,
+      },
+      {
+        src: "/Invoice-Processin-Platform/invoice-side-by-side-checker.png",
+        alt: "LedgerFlow invoice verification workspace with original document and extracted fields",
+        width: 1883,
+        height: 974,
+      },
+      {
+        src: "/Invoice-Processin-Platform/financial-analsys-dashboard.png",
+        alt: "LedgerFlow financial analytics dashboard",
+        width: 1883,
+        height: 974,
+      },
+      {
+        src: "/Invoice-Processin-Platform/project-wise-invoice-view.png",
+        alt: "LedgerFlow project-wise invoice allocation view",
+        width: 1883,
+        height: 974,
+      },
+      {
+        src: "/Invoice-Processin-Platform/llm-tokens-usage-page.png",
+        alt: "LedgerFlow LLM token usage and cost telemetry page",
+        width: 1883,
+        height: 974,
+      },
+      {
+        src: "/Invoice-Processin-Platform/integrations-page.png",
+        alt: "LedgerFlow integrations page for connected services",
+        width: 1883,
+        height: 974,
+      },
+    ],
+  },
+  "healthlab-medical-ai-reviewer": {
+    summary:
+      "A medical AI report reviewer platform that converts lab report PDFs into structured biomarkers, trends, report comparisons, branded PDFs, and RAG-grounded chat.",
+    role: "Full-stack SaaS, AI pipeline, clinical reporting workflow",
+    status: "Client product",
+    problem:
+      "Medical teams and patients work with inconsistent lab report PDFs that are hard to normalize, compare, and explain. The platform needed to extract structured biomarkers while masking PHI and supporting both patient-friendly and clinician-ready review.",
+    architecture: [
+      "React, Vite, TypeScript, Tailwind, TanStack Query, and Recharts build the report dashboard, patient and clinician flows, trend views, and comparison screens.",
+      "Node.js, Express, TypeScript, Prisma, PostgreSQL, BullMQ, and Redis run the API, queue orchestration, authentication boundaries, and report workflows.",
+      "Python, FastAPI, PyMuPDF, pdfplumber, Presidio, OpenAI, Mistral OCR, LangChain, and pgvector power extraction, PHI masking, biomarker parsing, and RAG chat.",
+      "The processing flow moves uploaded PDFs through report, extraction, and PDF queues before producing dashboards and branded generated reports.",
+      "Supabase-backed authentication, organization scoping, service-to-service secrets, and PHI tokenization protect sensitive medical workflows.",
+    ],
+    decisions: [
+      "Split the platform into web, API, and extraction services so clinical UX, backend workflows, and document intelligence can evolve independently.",
+      "Used a quality-driven extraction cascade: local PDF parsing first, OCR fallback for scanned or weak documents, then structured AI parsing.",
+      "Created separate response modes for patients and clinicians so explanations match the reader's context.",
+      "Normalized biomarkers and units to make trend charts, report comparison, and search useful across inconsistent lab formats.",
+    ],
+    tradeoffs: [
+      "A queue-driven pipeline adds operational moving parts, but long-running OCR, AI parsing, and PDF generation should not block the upload experience.",
+      "PHI masking adds latency and implementation work, but it is the right boundary before external AI calls.",
+      "Patient-friendly language improves comprehension, but the product must avoid diagnosis-heavy claims and keep clinician review in the loop.",
+    ],
+    learned: [
+      "Medical AI products need safety boundaries in the architecture, not just careful prompt wording.",
+      "Normalization is the foundation for every useful downstream view: trends, comparisons, search, and chat.",
+      "A clinical product has to serve two reading modes at once: calm explanation for patients and dense precision for clinicians.",
+    ],
+    screenshots: [
+      {
+        src: "/ai-medical-report/clinical_dashboard.png",
+        alt: "HealthLab clinician dashboard with patients, reports, appointments, and tasks",
+        width: 1876,
+        height: 1006,
+      },
+      {
+        src: "/ai-medical-report/patient_dashboard.png",
+        alt: "HealthLab patient dashboard for uploaded lab reports",
+        width: 1876,
+        height: 1006,
+      },
+      {
+        src: "/ai-medical-report/report-view-dashboard-1.png",
+        alt: "HealthLab clinical report review dashboard with biomarker balance",
+        width: 1880,
+        height: 1006,
+      },
+      {
+        src: "/ai-medical-report/ai-chatbot.png",
+        alt: "HealthLab AI chat assistant grounded in lab report context",
+        width: 584,
+        height: 647,
+      },
+      {
+        src: "/ai-medical-report/biomarker-analysis.png",
+        alt: "HealthLab biomarker analysis panel",
+        width: 627,
+        height: 399,
+      },
+      {
+        src: "/ai-medical-report/report-timeline.png",
+        alt: "HealthLab report timeline visualization",
+        width: 1245,
+        height: 329,
+      },
+    ],
+  },
   tinyqueue: {
     summary:
       "A small Redis-backed job queue focused on predictable background processing, retry behavior, and worker visibility.",
