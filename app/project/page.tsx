@@ -28,7 +28,7 @@ export default function Project() {
               <article className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <h2 className="text-lg font-medium leading-[1.3em] text-gray-200 transition-colors group-hover:text-white capitalize">
+                    <h2 className="break-words text-lg font-medium leading-[1.3em] text-gray-200 transition-colors group-hover:text-white capitalize">
                       {project.name}
                     </h2>
                   </div>
